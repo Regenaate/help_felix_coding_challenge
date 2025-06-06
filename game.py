@@ -44,6 +44,7 @@ class FelixGame:
     def __init__(self, story: StoryNode, felix: Player):
         self.story = story
         self.felix = felix
+        self.game_over = False
 
     def start_game(self):
         self.slow_print(
@@ -58,28 +59,37 @@ class FelixGame:
 
     def play_game(self):
         current_node = self.story
-        while not self.felix.check_goals():
+        while not self.felix.check_goals() and not self.game_over:
             self.slow_print(current_node.value)
             self.slow_print(current_node.question)
             self.print_options(current_node.options)
             choice = input("Choose an option: ")
-            self.handle_choice(choice, current_node)
-        self.slow_print("Congratulations! You have helped Felix achieve all his goals!")
+            current_node = self.handle_choice(choice, current_node)
+
+        if self.felix.check_goals():
+            self.slow_print(
+                "Congratulations! You have helped Felix achieve all his goals!"
+            )
+        else:
+            self.slow_print("GAME OVER!\nYou did not help Felix achieve all his goals.")
+        sys.exit(0)
 
     def print_options(self, options: List[StoryNode]):
         for i, option in enumerate(options):
             print(f"{i + 1}. {option.value}")
 
     def handle_choice(self, choice: int, current_node: StoryNode):
+        next_node = current_node
         if choice.isdigit() and 1 <= int(choice) <= len(current_node.options):
-            current_node = current_node.options[int(choice) - 1]
-            if current_node.trigger:
-                current_node.trigger(
-                    self.felix
+            next_node = current_node.options[int(choice) - 1]
+            if next_node.trigger:
+                next_node.trigger(
+                    self.felix, self
                 )  # Call the trigger function if it exists
-                current_node = self.story
+                next_node = self.story
         else:
             self.slow_print("Invalid choice, please try again.")
+        return next_node
 
     def slow_print(self, text):
         for char in text:
@@ -92,6 +102,13 @@ class FelixGame:
             # else:
             #     time.sleep(0.05)  # Adjust the delay (in seconds) as needed
         print()  # Add a newline at the end
+
+
+def lizarda_trigger(player, game):
+    if not player.paranoia:
+        game.game_over = True
+    else:
+        player.girlfriend = True
 
 
 girlfriend_options = [
@@ -111,7 +128,7 @@ girlfriend_options = [
         "Lizarda",
         "Lizarda will only work if Felix overcomes his paranoia first. Otherwise, you'll lose. But if he does, she will help him out with selling life insurance with her…soft skills 😂",
         [],
-        trigger=lambda player: setattr(player, "girlfriend", True),
+        trigger=lizarda_trigger,
     ),
 ]
 
