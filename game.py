@@ -45,6 +45,7 @@ class FelixGame:
         self.story = story
         self.felix = felix
         self.game_over = False
+        self.current_node = story
 
     def start_game(self):
         self.slow_print(
@@ -108,7 +109,21 @@ def lizarda_trigger(player, game):
     if not player.paranoia:
         game.game_over = True
     else:
-        player.girlfriend = True
+        player.girlfriend = "Lizarda"
+
+
+def samatha_trigger(player, game):
+    if player.paranoia:
+        game.game_over = True
+    else:
+        player.girlfriend = "Samantha"
+
+
+def stacy_trigger(player, game):
+    if player.job:
+        player.girlfriend = "Stacy"
+    else:
+        game.game_over = True
 
 
 girlfriend_options = [
@@ -116,13 +131,13 @@ girlfriend_options = [
         "Stacy",
         "Stacy is a cold gold digger, so you'll have to get good at your life insurance job first. Felix won't be the happiest with her, but it will achieve his goal of companionship.",
         [],
-        trigger=lambda player: setattr(player, "girlfriend", True),
+        trigger=stacy_trigger,
     ),
     StoryNode(
         "Samantha",
         "Samantha will only work if Felix hasn't overcome his paranoia, because she has paranoia too. She is…kind of a psycho and can help you achieve your life insurance goal by instilling fear into your potential clients. In the end, she'll admit that she's actually",
         [],
-        trigger=lambda player: setattr(player, "girlfriend", True),
+        trigger=samatha_trigger,
     ),
     StoryNode(
         "Lizarda",
