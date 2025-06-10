@@ -1,5 +1,6 @@
 ## How To Run
-``` python main.py
+```
+python main.py
 ```
 ## Cool Things
 - Slow text, but you can skip it with input.
