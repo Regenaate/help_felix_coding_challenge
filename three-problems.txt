@@ -131,7 +131,7 @@ Oh, but Felix looks so fancy in the suit. Well, alright.
 So which attire do you want to change Felix into?
 1. Change into Reaper Costume
 2. Change into Polo & Khakis
-3. Keep The Business Suit & Tie
+3. Keep The Business Suit On
 Business Suit Off
 
 Change into Polo & Khakis
