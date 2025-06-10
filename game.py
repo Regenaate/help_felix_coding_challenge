@@ -97,7 +97,7 @@ class FelixGame:
 
     def start_game(self):
         self.slow_print(
-            "So you're a therapist, and your client (Felix) wants your help on how to achieve his goals. Felix has 3 goals, and you must help him achieve each of them."
+            "So you're a therapist, and your client (Felix) wants your help on how to achieve his goals. Felix has 3 goals, and you must help him achieve each of them.", True
         )
         input("Enter to continue...")  # waits for user input
         os.system("clear")  # clears the terminal on Mac/Linux
@@ -140,7 +140,7 @@ class FelixGame:
                 final_story_node = self.story_master.get_next_story_node("End with Lizarda")
             elif self.felix.girlfriend == "Nathan?":
                 final_story_node = self.story_master.get_next_story_node("End with Nathan")
-            self.slow_print(final_story_node.value)
+            self.slow_print(final_story_node.value, True)
             self.slow_print(final_story_node.question)
         else:
             self.slow_print("GAME OVER!\nYou did not help Felix achieve all his goals.")
