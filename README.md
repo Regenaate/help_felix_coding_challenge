@@ -1,3 +1,6 @@
+## What is this?
+Entry for a "Build Your Own Advanture" coding challenge
+
 ## How To Run
 ```
 python main.py
