@@ -2,6 +2,7 @@
 Entry for a "Build Your Own Advanture" coding challenge. Objective: help Felix achieve his goals.
 
 ## How To Run
+clone the repository, then rerun the command below to play:
 ```
 python main.py
 ```
