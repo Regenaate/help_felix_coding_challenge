@@ -1,5 +1,5 @@
 ## What is this?
-Entry for a "Build Your Own Advanture" coding challenge
+Entry for a "Build Your Own Advanture" coding challenge. Objective: help Felix achieve his goals.
 
 ## How To Run
 ```
