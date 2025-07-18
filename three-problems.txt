@@ -325,7 +325,7 @@ Seriously, why did you think that would work? You sent the poor man to die.
 lose
 
 A stick?
-Felix takes the stick because he has some trust in it as a weapon, for some reason. As it turns out, he picked a great weapon. It's a wand! After entering the battlefiled, Felix repeatedly flicks the wand while yelling "AVADA KADAVRA!" to defeat the charging reptilians. Felix wins the first battle, but now he has to face the lizard king.
+Felix takes the stick because he has some trust in it as a weapon, for some reason. As it turns out, he picked a great weapon. It's a wand! After entering the battlefield, Felix repeatedly flicks the wand while yelling "AVADA KADAVRA!" to defeat the charging reptilians. Felix wins the first battle, but now he has to face the lizard king.
 Unfortunately, yelling out "Avada Kadavra" doesn't seem to work on the lizard king. You might have backed Felix into a corner with your prompt choice, but perhaps Felix can try a new spell. 
 1. Attempt new spell? (70% chance-of-success)
 2. Drop the wand and plead to the Lizard King
