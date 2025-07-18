@@ -13,7 +13,7 @@ python main.py
 ## Unfortunate Thing
 - The ability to change Felix's apparel only does ONE thing with one of the customers. It would have been funny to keep Felix in the attire for the other problems to solve where they made some sort of difference, but there wasn't time to implement it this way.
 
-## Optional Challenges (Unlockable Options For Certain Prompts)
+## Easter Eggs (Unlockable Options For Certain Prompts)
 - Unlock/Choose the 4th life companion option
 - Get "The Deadliest Person You Know" to fight the lizard king
 - Sell Mrs. Robinson Life Insurnace, with the power of acting!
